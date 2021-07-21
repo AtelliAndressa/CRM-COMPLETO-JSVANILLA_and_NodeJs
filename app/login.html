@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <title>Sistema de gestão de despesas</title>
+</head>
+<body>
+  <div id="container">
+    <header>
+      <div id="logo">
+        <img src="./img/logo.svg" />
+      </div>
+      <div id="header-buttons">
+        <button id="signin" class="button-header">Sign In</button>
+        <button id="signUp" class="button-header" >Sign Up</button>
+      </div>
+    </header>
+    <div id="principal-content">
+    <div id="modal-login">
+      <h2 id="login-title">
+        Login
+      </h2>
+      <div class="input-container">
+        <label for="e-mail" class="input-label">Your E-mail:</label>
+        <input type="e-mail" name="e-mail" id="input-mail" placeholder="Insert your e-mail">
+      </div>
+      <div class="input-container">
+        <label for="password" class="input-label">Password:</label>
+        <input type="password" id="input-password" name="password" placeholder="Insert your password">
+      </div>
+      <span class="forgot-password">
+        <a href="#">Forgot your password?</a>
+      </span>
+      <div class="btns">
+        <button id="btn-login" class="btn-signin">Login</button>
+        <button type="button" id ="btn-register" class="btn-signout">Register</button>
+      </div>    
+    </div>
+  </div>
+    <footer>
+      Powered by FrontGrego
+    </footer>
+  </div>
+</body>

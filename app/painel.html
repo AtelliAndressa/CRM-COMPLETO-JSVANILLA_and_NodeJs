@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <title>Sistema de gestão de despesas</title>
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <div id="logo">
+        <img src="./img/logo.svg" />
+      </div>
+      <div id="header-buttons">
+        <button id="btn-config" class="button-header"><img src="./img/settings.svg" />Settings</button>
+        <button id="btn-logout" class="button-header"><img src="./img/exit.svg" />Logout</button>
+      </div>
+      <input type="hidden" id="user_id" value="5" />
+    </header>
+    <div id="principal-content">
+      <div id="painel-content">
+        <div id="painel-title">
+          <h2>Recent Expenses</h2>
+        </div>
+        <div id="expenses-content" class="expenses">
+          <div id="expenses-titles" class="expenses">
+            <h3>ID</h3>
+            <h3><select id="categories" name="select">
+              <option value="valor" selected>Category</option>
+              <option value="valor1">Valor1</option>
+              <option value="valor2">Valor2</option>
+              <option value="valor3">Valor3</option>
+            </select></h3>
+            <h3>Expiration Date</h3>
+            <h3>Release Date</h3>
+            <h3>Total</h3>
+
+          </div>
+          <div id="expenses-table">
+            <div class="expenses">
+              <span class="">1</span>
+              <span class="">Alimento</span>
+              <span class="">24/04/2022</span>
+              <span class="">27/04/2022</span>
+              <span class="">R$999,00</span>
+              <span class="btn-expense">
+                <button id="btn-edit">
+                  <img src="./img/edit.svg" />
+                </button>
+                <button id="btn-delete">
+                  <img src="./img/trash.svg">
+                </button>
+              </span>
+            </div>
+          </div>          
+        </div>
+        
+        <div id="add-button">
+          <button id="add-expense" onclick="openAddExpense()"><img src="./img/add.svg"></button>
+          <button id="add-category"><img src="./img/add-list.png"></button>
+        </div>
+
+      </div>
+    </div>
+    <footer>
+      Powered by FrontGrego
+    </footer>
+    <script type="text/javascript" src="./js/index.js"></script>
+  </div>
+
+
+</body>
+
+</html>

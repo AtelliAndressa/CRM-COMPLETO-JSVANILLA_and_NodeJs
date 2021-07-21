@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <title>Sistema de gestão de despesas</title>
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <div id="logo">
+        <img src="./img/logo.svg" />
+      </div>
+      <div id="header-buttons">
+        <button id="signin" class="button-header" onclick="loadLogin()">Sign In</button>
+        <button id="signUp" class="button-header" onclick="loadRegister()">Sign Up</button>
+      </div>
+    </header>
+    <div id="principal-content">
+      <div id="cta-body">
+        <h1 id="cta-title">
+          The System of Expenses that will change your life
+        </h1>
+        <div>
+          <img src="./img/ilustration-graphics.svg" />
+          <button id="cta-button" onclick="loadRegister()">Register</button>
+        </div>
+      </div>
+      <!-- Modal Login-->
+      <div id="modal-login" class="hidden" style="display: none">
+        <h2 id="login-title">
+          Login
+        </h2>
+        <div class="input-container">
+          <label for="e-mail" class="input-label">Your E-mail:</label>
+          <input type="e-mail" name="e-mail" id="input-mail" placeholder="Insert your e-mail">
+        </div>
+        <div class="input-container">
+          <label for="password" class="input-label">Password:</label>
+          <input type="password" id="input-password" name="password" placeholder="Insert your password">
+        </div>
+        <span class="forgot-password">
+          <a href="#">Forgot your password?</a>
+        </span>
+        <div class="btns">
+          <button id="btn-login" class="btn-signin" onclick="signIn()">Login</button>
+          <button type="button" id="btn-register" class="btn-signup" onclick="loadRegister()">Register</button>
+        </div>    
+      </div>
+      <!-- modal SignUp-->
+      <div id="modal-register" style="display: none">
+
+        <h2 id="register-title">
+          Register
+        </h2>
+        <div>
+          <div class="input-container">
+            <label for="username" class="input-label">User:</label>
+            <input type="text" id="name" name="name" required placeholder="Insert your username">
+          </div>
+          <div class="input-container">
+            <label for="email" class="input-label">E-mail:</label>
+            <input type="email" id="email" name="email" required placeholder="Insert your e-mail">
+          </div>
+          <div class="input-container">
+            <label for="phone" class="input-label">Phone:</label>
+            <input type="phone" id="phone" name="phone" required placeholder="Insert your phone">
+          </div>
+          <div class="input-container">
+            <label for="password" class="input-label">Password:</label>
+            <input type="password" id="password" required name="password" placeholder="Insert your password">
+          </div>
+          <div class="input-container">
+            <label for="confirm-password" class="input-label">Confirm Password:</label>
+            <input type="password" id="confirm-password" required name="confirm-password"
+              placeholder="Confirm your password">
+          </div>
+        </div>
+
+        <div class="btns">
+          <button id="btn-back" onclick="backToCTA()">Back</button>
+          <button id="btn-submit">Register Now</button>
+        </div>
+        <div id="resposta">
+
+        </div>
+      </div>
+    </div>      
+  </div>
+  <!-- modal painel-->
+  <div id="container-painel" class="hidden" style="display: none">
+    <header>
+      <div id="logo">
+        <img src="./img/logo.svg" onclick="backtoPainel()" />
+      </div>
+      <div id="header-buttons">
+        <button id="btn-config" class="button-header"><img src="./img/settings.svg" />Settings</button>
+        <button id="btn-logout" class="button-header"><img src="./img/exit.svg" onclick="logout()"/>Logout</button>
+      </div>
+    </header>
+    <div id="principal-content">
+      <div id="painel-content">
+        <div id="painel-title">
+          <h2>Recent Expenses</h2>
+        </div>
+        <div id="expenses-content" class="expenses">
+          <div id="expenses-titles" class="expenses">
+            <h3>ID</h3>
+            <h3><select id="categories" name="select">
+                <option value="valor" selected>Category</option>
+                <option value="valor1">Valor1</option>
+                <option value="valor2">Valor2</option>
+                <option value="valor3">Valor3</option>
+              </select></h3>
+            <h3>Expiration Date</h3>
+            <h3>Release Date</h3>
+            <h3>Total</h3>
+
+          </div>
+          <div id="expenses-table">
+            <div class="expenses">
+              <span class="">1</span>
+              <span class="">Alimento</span>
+              <span class="">24/04/2022</span>
+              <span class="">27/04/2022</span>
+              <span class="">R$999,00</span>
+              <span class="btn-expense">
+                <button id="btn-edit">
+                  <img src="./img/edit.svg" />
+                </button>
+                <button id="btn-delete">
+                  <img src="./img/trash.svg">
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="add-button">
+          <button id="add-expense" onclick="createAddExpense()"><img src="./img/add.svg"></button>
+          <button id="add-category" onclick="createAddCategories()"><img src="./img/add-list.png"></button>
+        </div>
+
+      </div>
+      <div id="modal-register-expense" class="modal-register hidden" style="display: none">
+        <h2 id="expense-title">
+          New Expense
+        </h2>
+        <div>
+          <div class="input-container">
+            <label for="category" class="input-label">Category:</label>
+            <select id="category">
+              <option>-</option>
+              <option value="1">Alimentação</option>
+              <option value="2">Farmácia</option>
+              <option value="3">Lazer</option>
+            </select>
+          </div>
+          <div class="input-container">
+            <label for="release-date" class="input-label">Release Date:</label>
+            <input type="date" id="input-release" name="release-date" placeholder="">
+          </div>
+          <div class="input-container">
+            <label for="expiration-date" class="input-label">Expiration Date:</label>
+            <input type="date" id="input-expiration" name="expiration-date" placeholder="">
+          </div>
+          <div class="input-container">
+            <label for="total" class="input-label">Total:</label>
+            <input type="number" id="input-total" name="total" scale="0.01" placeholder="Digite um valor">
+          </div>
+        </div>
+  
+ 
+        <div class="btns">
+          <button id="btn-create-expense" onlick="">Register</button>
+        </div>
+        <div id="response">
+  
+        </div>
+      </div>
+      <!-- Modal to load data from expense to update -->
+      <div id="modal-update-expense" class="modal-register hidden" style="display: none">
+        <h2 id="expense-title">
+          Update Expense
+        </h2>
+        <div>
+          <input id="expense_id" type="hidden" value="" />
+          <div class="input-container">
+            <label for="category_update" class="input-label">Category:</label>
+            <select id="category_update">
+              <option>-</option>
+              <option value="1">Alimentação</option>
+              <option value="2">Farmácia</option>
+              <option value="3">Lazer</option>
+            </select>
+          </div>
+          <div class="input-container">
+            <label for="input-release-update" class="input-label">Release Date:</label>
+            <input type="date" id="input-release-update" name="input-release-update" placeholder="">
+          </div>
+          <div class="input-container">
+            <label for="expiration-date-update" class="input-label">Expiration Date:</label>
+            <input type="date" id="input-expiration-update" name="expiration-date-update" placeholder="">
+          </div>
+          <div class="input-container">
+            <label for="total-update" class="input-label">Total:</label>
+            <input type="number" id="input-total-update" name="total-update" scale="0.01" placeholder="Digite um valor">
+          </div>
+        </div>
+  
+ 
+        <div class="btns">
+          <button id="btn-update-expense" class="btn-create">Update</button>
+        </div>
+        <div id="response-update">
+  
+        </div>
+      </div>
+       <!-- Modal to load data from expense to delete -->
+       <div id="modal-delete-expense" class="modal-register hidden" style="display: none">
+        <h2 id="expense-title">
+          Do you really want to delete that expense?
+        </h2>
+        <div>
+          <input id="expense_id_delete" type="hidden" value="" />
+          <div class="input-container">
+            <label for="category_delete" class="input-label">Category:</label>
+            <select disabled id="category_delete">
+              <option>-</option>
+              <option value="1">Alimentação</option>
+              <option value="2">Farmácia</option>
+              <option value="3">Lazer</option>
+            </select>
+          </div>
+          <div class="input-container">
+            <label for="input-release-delete" class="input-label">Release Date:</label>
+            <input readonly disabled type="date" id="input-release-delete" name="input-release-delete" placeholder="">
+          </div>
+          <div class="input-container">
+            <label for="expiration-date-delete" class="input-label">Expiration Date:</label>
+            <input readonly disabled type="date" id="input-expiration-delete" name="expiration-date-delete" placeholder="">
+          </div>
+          <div class="input-container">
+            <label for="total-delete" class="input-label">Total:</label>
+            <input readonly disabled type="number" id="input-total-delete" name="total-delete" scale="0.01" placeholder="Digite um valor">
+          </div>
+        </div>
+  
+ 
+        <div class="btns">
+          <button id="btn-delete-expense" class="btn-create">Delete</button>
+        </div>
+        <div id="response-delete">
+  
+        </div>
+      </div>
+      <!-- modal Add Category-->
+      <div id="modal-register-category" class="modal-register hidden" style="display: none">
+  
+        <h2 id="expense-title">
+          New Category
+        </h2>
+        <div>
+          <div class="input-container">
+            <label for="input-name" class="input-label">Description:</label>
+            <input type="text" name="input-name" id="input-name" placeholder="Category Description" />
+          </div>
+        </div>
+  
+        <input type="hidden" id="user_id" value="5" />
+  
+        <div class="btns">
+          <button id="btn-create-category" class="btn-create">Register</button>
+        </div>
+        <div id="response">
+  
+        </div>
+      </div>
+    </div>
+    <!-- modal register expense-->
+    
+  </div> 
+
+  <footer>
+    Powered by FrontGrego
+  </footer>
+  <script type="text/javascript" src="js/animations.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+
+</html>

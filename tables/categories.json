@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Alimentação",
+        "user_id": 0,
+        "deleted": false
+    },
+    {
+        "id": 2,
+        "name": "Farmácia",
+        "user_id": 0,
+        "deleted": false
+    },
+    {
+        "id": 3,
+        "name": "Lazer",
+        "user_id": 0,
+        "deleted": false
+    },
+    {
+        "id": 4,
+        "name": "Estética",
+        "user_id": 1,
+        "deleted": false
+    },
+    {
+        "id": 5,
+        "name": "Vestuário",
+        "user_id": 5,
+        "deleted": false
+    }
+]

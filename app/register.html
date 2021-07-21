@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <title>Sistema de gestão de despesas</title>
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <div id="logo">
+        <img src="./img/logo.svg" />
+      </div>
+      <div id="header-buttons">
+        <button id="signin" class="button-header">Sign In</button>
+        <button id="signUp" class="button-header">Sign Up</button>
+      </div>
+    </header>
+    <div id="principal-content">
+      <div id="modal-register">
+          
+            <h2 id="register-title">
+              Register
+            </h2>
+            <div>            
+            <div class="input-container">
+              <label for="username" class="input-label">User:</label>
+              <input type="text" id="name" name="name" required placeholder="Insert your username">
+            </div>
+            <div class="input-container">
+              <label for="email" class="input-label">E-mail:</label>
+              <input type="email" id="email" name="email" required placeholder="Insert your e-mail">
+            </div>
+            <div class="input-container">
+              <label for="phone" class="input-label">Phone:</label>
+              <input type="phone" id="phone" name="phone" required placeholder="Insert your phone">
+            </div>
+            <div class="input-container">
+              <label for="password" class="input-label">Password:</label>
+              <input type="password" id="password" required name="password" placeholder="Insert your password">
+            </div>
+            <div class="input-container">
+              <label for="confirm-password" class="input-label">Confirm Password:</label>
+              <input type="password" id="confirm-password" required name="confirm-password" placeholder="Confirm your password">
+            </div>
+          </div>
+
+            <div class="btns">
+              <button  id="btn-back">Back</button>
+              <button id="btn-submit">Register Now</button>
+            </div>
+            <div id="resposta">
+
+            </div>
+          </div>
+      </div>
+    </div>
+    <footer>
+      Powered by FrontGrego
+    </footer>
+    <script type="text/javascript" src="./js/index.js"></script>
+  </div>
+
+</body>
+
+</html>

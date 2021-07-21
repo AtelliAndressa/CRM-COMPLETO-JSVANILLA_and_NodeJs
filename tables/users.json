@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Fulano",
+        "email": "fulano@teste.com",
+        "phone": "99 99999 9999",
+        "password": "123",
+        "deleted": false
+    },
+    {
+        "id": 2,
+        "name": "Ermerson",
+        "email": "fulano@teste.com",
+        "phone": "99 99999 9999",
+        "password": "123",
+        "deleted": false
+    },
+    {
+        "name": "Fábio Andrade",
+        "email": "fabio@alphaedtech.org.br",
+        "phone": "34992397294",
+        "password": "123456",
+        "id": 3,
+        "deleted": false
+    },
+    {
+        "name": "Fábio Henrique Andrade",
+        "email": "fabio1990.henrique@gmail.com",
+        "phone": "34992397294",
+        "password": "1234",
+        "id": 4,
+        "deleted": true
+    },
+    {
+        "name": "Fábio Henrique Andrade",
+        "email": "fabio1990.henrique@gmail.com",
+        "phone": "34992397294",
+        "password": "1234",
+        "id": 5,
+        "deleted": false
+    },
+    {
+        "name": "Fábio Henrique Andrade",
+        "email": "fabio.andrade@mili1.com.br",
+        "phone": "(34) 99239-7294",
+        "password": "1234",
+        "id": 6,
+        "deleted": true
+    }
+]

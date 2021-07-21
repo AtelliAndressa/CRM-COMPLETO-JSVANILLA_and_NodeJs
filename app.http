@@ -1,0 +1,121 @@
+###
+POST http://localhost:3000/create-user HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": null,
+    "name":"Fulano",
+    "email":"fulano@teste.com",
+    "phone": "99 99999 9999",
+    "password":"123"
+}
+###
+
+POST http://localhost:3000/create-category HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": null,
+    "name":"Educação",
+    "user_id":9
+}
+###
+POST http://localhost:3000/create-expense HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": null,
+    "category_id":1,
+    "user_id":6,
+    "due_date":"2021-09-13",
+    "release_date":"2021-06-25",
+    "total":999.99
+}
+
+###
+POST http://localhost:3000/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "email": "fulano@teste.com",
+    "password": "123"
+}
+###
+
+GET http://localhost:3000/get-categories/user/2
+
+###
+
+GET http://localhost:3000/get-users
+
+###
+
+GET http://localhost:3000/get-category/user/1/category/4
+
+###
+
+GET http://localhost:3000/get-user/1
+
+###
+
+GET http://localhost:3000/get-expenses/user/1
+
+###
+
+GET http://localhost:3000/get-expenses/user/1/category/1
+
+###
+
+GET http://localhost:3000/get-expenses/user/1/expense/2
+
+###
+
+
+PUT http://localhost:3000/update-user HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 3,
+    "name":"Ermerson",
+    "email":"fulano@teste.com",
+    "phone": "99 99999 9999",
+    "password":"123"
+}
+###
+
+
+PUT http://localhost:3000/update-category HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 3,
+    "name":"Estética",
+    "user_id":1
+}
+
+###
+PUT http://localhost:3000/update-expense HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": 2,
+    "category_id":1,
+    "user_id":1,
+    "due_date":"2021-09-13",
+    "release_date":"2021-06-25",
+    "total":2999.99
+}
+
+###
+DELETE http://localhost:3000/delete-user/1
+
+###
+
+DELETE http://localhost:3000/delete-category/user/1/category/4
+
+###
+
+
+DELETE http://localhost:3000/delete-expense/user/1/expense/2
+
+###
